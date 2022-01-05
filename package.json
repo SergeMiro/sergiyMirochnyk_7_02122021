@@ -1,0 +1,20 @@
+{
+  "name": "sergiyMirochnyk",
+  "version": "1.0.0",
+  "description": "Site de recettes",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./sass/main.scss:./styles.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergeMiro/sergiyMirochnyk_7_02122021.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SergeMiro/sergiyMirochnyk_7_02122021/issues"
+  },
+  "homepage": "https://github.com/SergeMiro/sergiyMirochnyk_7_02122021#readme"
+}
