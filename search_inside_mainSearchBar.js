@@ -1,5 +1,4 @@
 import { refreshRecipes } from "./refresh_items.js";
-import { normalizeValues } from "./reusables-functions.js";
 
 class MainSearchFactory {
   constructor(input, articles) {
@@ -36,7 +35,6 @@ const research = (articles, input) => {
   restArticles.splice(0, restArticles.length);
 
   let errorMessage = document.querySelector("#error-message");
-
   if (errorMessage) errorMessage.remove();
 
   refreshRecipes(articles, restArticles, input.value);
@@ -47,8 +45,8 @@ const research = (articles, input) => {
 };
 
 const displayErrorMessage = () => {
-  let container = document.querySelector("#dropDownMenus-container");
-  container.insertAdjacentHTML(
+  let menuNav = document.querySelector(".menuNav");
+  menuNav.insertAdjacentHTML(
     "afterend",
     `
         <p id = "error-message" >Oups...<i class="far fa-dizzy"></i><br>Votre recherche ne correspond à aucun résultat...Vous pouvez chercher "tarte aux pommes", "poisson", etc...</p>`
