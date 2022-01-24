@@ -37,7 +37,7 @@ body {
       display: block;
       float: right;
       position: relative;
-      bottom: 50px;
+      bottom: 48px;
       right: 20px;
       font-size: 28px;
       cursor: pointer;
@@ -76,10 +76,9 @@ body {
 #dropDownMenus-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px 15px;
+  gap: 15px 0px;
   align-items: flex-start;
   position: absolute;
-  z-index: 9;
 }
 
 .dropDownMenus {
@@ -93,12 +92,9 @@ body {
     z-index: 99;
     font-size: 18px;
     cursor: pointer;
-    // padding-left: 20px;
-
+    padding-left: 20px;
     &::placeholder {
       color: #fff;
-      padding-left: 20px;
-      // padding-left: 20px;
     }
 
     &_ingredients {
@@ -121,8 +117,7 @@ body {
       display: none;
       margin-right: 15px;
       min-width: 250px;
-      max-width: 70%;
-      padding: 20px 2px;
+      padding: 20px;
       border-radius: 5px;
       &_title {
         border-width: 0;
@@ -131,7 +126,6 @@ body {
         font-size: 18px;
         color: #fff;
         outline-width: 0;
-        padding-left: 20px;
 
         &::placeholder {
           color: #fff;
@@ -143,68 +137,49 @@ body {
         display: block;
         position: relative;
         float: right;
-        right: 25px;
         top: 5px;
         cursor: pointer;
       }
       &_list {
         display: flex;
-        margin-left: 20px;
-        // flex-flow: column wrap;
-        flex-wrap: wrap;
+        flex-flow: column wrap;
         gap: 5px 10px;
         list-style-type: none;
-        padding-left: 0;
+        padding-inline-start: unset;
         color: #fff;
         z-index: 999;
         li {
-          width: 180px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: clip;
-          text-overflow: ellipsis;
-          text-overflow: "...";
+          max-width: 100px;
           cursor: pointer;
           &:hover {
-            transform: scale(1.1) translate(5px);
+            transform: scale(110%) translate(5px);
             transition: 200ms;
-            overflow: unset;
-            white-space: unset;
-            text-overflow: unset;
-            text-overflow: unset;
           }
           &:focus {
             outline-style: dashed;
             outline-color: white;
-            overflow: unset;
-            white-space: unset;
-            text-overflow: unset;
-            text-overflow: unset;
           }
         }
         &_ing {
-          // max-height: 400px;
-          width: 100%;
+          max-height: 500px;
         }
-        // &_appliance {
-        //   // max-height: 100px;
-        //   // width: 100%;
-        // }
-        // &_ustensils {
-        //   // max-height: 270px;
-        // }
+        &_appliance {
+          max-height: 100px;
+        }
+        &_ustensils {
+          max-height: 270px;
+        }
       }
       &_ingredient {
         background-color: $ingredientsBgColor;
-        max-width: 800px;
       }
       &_appliance {
         background-color: $appareilBgColor;
-        max-width: 400px;
+        width: 350px;
       }
       &_ustensils {
         background-color: $ustensiltesBgColor;
-        max-width: 400px;
+        width: 350px;
       }
     }
   }
@@ -215,15 +190,10 @@ body {
     display: block;
     float: right;
     right: 40px;
-    margin-right: -8px;
     top: 30px;
     cursor: pointer;
     height: 20px;
   }
-}
-
-.end-message {
-  padding-right: 20px;
 }
 //Changement de propriété pour JS
 #container-1_inactive {
@@ -268,7 +238,7 @@ body {
   border-radius: 5px;
   &:hover,
   &:focus {
-    transform: scale(1.01);
+    transform: scale(102%);
     transition: 400ms;
     -webkit-box-shadow: 0px 10px 13px -7px #000000,
       -5px -27px 32px 1px rgba(0, 0, 0, 0.05);
@@ -285,13 +255,12 @@ body {
     background-color: $inputSearchBgColor;
     margin-top: -3px;
     border-radius: 0 0 5px 5px;
-    padding: 20px;
-    // min-height: 120px;
-    height: 170px;
+    padding: 20px 20px 0px 20px;
+    min-height: 180px;
+    max-height: 180px;
     &_name {
-      display: inline-block;
+      display: inline;
       margin: unset;
-      max-width: 280px;
     }
     &_time {
       display: block;
@@ -301,11 +270,9 @@ body {
     }
     &--text {
       margin-right: unset;
-      padding-top: 20px;
+      margin-top: 20px;
       display: flex;
       justify-content: space-around;
-      max-height: 90px;
-
       &_list {
         margin: unset;
         min-width: 161px;
@@ -313,31 +280,15 @@ body {
         padding-left: unset;
         list-style-type: none;
         font-size: 12px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-overflow: "...";
-        display: -webkit-box;
-        -webkit-line-clamp: 7;
-        -webkit-box-orient: vertical;
-        padding-left: 10px;
       }
       &_instructions {
-        text-align: justify;
         display: inline;
         margin: unset;
         font-size: 12px;
         overflow: hidden;
-        white-space: wrap;
-        text-overflow: clip;
+        overflow-wrap: break-word;
+        max-height: 120px;
         text-overflow: ellipsis;
-        text-overflow: "...";
-        // max-height: 100px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-overflow: "...";
-        display: -webkit-box;
-        -webkit-line-clamp: 6;
-        -webkit-box-orient: vertical;
         padding-left: 10px;
       }
     }
